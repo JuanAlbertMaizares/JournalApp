@@ -9,6 +9,9 @@ export const useForm = ( initialForm = {}, formValidations={} ) => {
     useEffect(() => {
         createValidators();
     }, [formState])
+    useEffect(() => {
+        setFormState( initialForm );
+    }, [ initialForm ])
     
     const isFormValid = useMemo( () => {
         for (const formValue of Object.keys(formValidation)) {
@@ -16,7 +19,8 @@ export const useForm = ( initialForm = {}, formValidations={} ) => {
         }
         return true;
     }, [formValidation]);
-
+    // el seteador es quien carga los datos, de cualquier formulario
+    // de target, del evento recibido, se toma y computa segun el name del campo con el valor en value.
     const onInputChange = ({ target }) => {
         const { name, value } = target;
         setFormState({

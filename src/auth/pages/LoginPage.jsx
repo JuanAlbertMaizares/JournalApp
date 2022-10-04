@@ -10,16 +10,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { startGoogleSignIn, startLoginWithEmailPassword } from "../../store/auth";
 import { useMemo } from "react";
 
-
+const formData = {
+  email: '',
+  password: ''
+};
 export const LoginPage = () => {
   const { status, errorMessage } = useSelector( state => state.auth );
 
   const dispatch = useDispatch();
 
-  const {email, password, onInputChange} = useForm({
-      email: '',
-      password: ''
-  });
+  const {email, password, onInputChange} = useForm(formData);
   // si status nunca cambia no se vuelve a calcular la verdad sobre la ===
   const isAuthenticating = useMemo( ()=> status === 'checking', [status]);
   

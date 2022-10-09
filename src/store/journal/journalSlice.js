@@ -51,7 +51,10 @@ export const journalSlice = createSlice({
 
         },
         deleteNoteById: ( state, action ) =>  {
-
+            state.active = null;
+            // filtro, me quedo con los elementos que tengan un id 
+            // distinto al id que viene en action.
+            state.notes = state.notes.filter( note => note.id !== action.payload );
         },
     }
 });

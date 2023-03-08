@@ -8,8 +8,10 @@ import { purpleTheme } from "./purpleTheme"
 export const AppTheme = ({children}) => {
   return (
     <ThemeProvider theme={purpleTheme}>
+        {/* este compo es el normalize.css de MUI*/}
         <CssBaseline/>
         {children}
     </ThemeProvider>
   )
 }
+ 

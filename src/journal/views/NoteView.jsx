@@ -107,8 +107,13 @@ export const NoteView = () => {
                     Borrar
                 </Button>
             </Grid>
-
-            <ImageGallery images={ note.imageUrls } />
+            {/* Si hay imagenes las rederizamos, sino no. */}
+            {
+                ((note.imageUrls === undefined) || (note.imageUrls.length == 0)) ? <h4>No hay imagenes aún.</h4> : <ImageGallery images={ note.imageUrls } />
+            
+            }
+            
+            
         </Grid>
 
     )

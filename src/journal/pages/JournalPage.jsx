@@ -21,9 +21,9 @@ export const JournalPage = () => {
               ? <NoteView/>
               : <NothingSelectedView/>
           }
-
+          {/* boton para agregar una nota */}
           <IconButton
-              // isSaving es na prop del Slide de Journal, para bloquear boton trabajando
+              // isSaving es una prop del Slide de Journal, para bloquear boton trabajando
               disabled={ isSaving }
               onClick={onClickNewNote}
               size='large'

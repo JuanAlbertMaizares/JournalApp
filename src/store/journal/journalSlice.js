@@ -1,3 +1,29 @@
+// usamos el createSlice de redux-toolkit para crear el slice del journal
+// contiene el estado inicial y las funciones que modifican el estado
+// en este caso las acciones son: addNewEmptyNote, setActiveNote, setNotes, noteUpdate, deleteNoteById
+// las acciones son funciones que reciben el estado y un payload
+/*
+    slice = {
+        name: '',
+        initialState: {
+            isSaving: false,
+            messageSaved: '',
+            notes: [],
+            active: null
+        }
+        reducers: {
+            savingNewNote: ( state ) => {},
+            addNewEmptyNote: ( state, action ) =>  {},
+            setActiveNote: ( state, action ) =>  {},
+            setNotes: ( state, action ) =>  {},
+            noteUpdate: ( state, action ) =>  {},
+            deleteNoteById: ( state, action ) =>  {},
+            ...
+
+        }
+    }
+*/
+
 import { createSlice } from '@reduxjs/toolkit';
 
 export const journalSlice = createSlice({

@@ -1,3 +1,10 @@
+/*
+los thunks son funciones de ejecución tardia, acciones asincronas, que estan listos 
+para ser ejecutados cuando se necesiten.
+Cada thunk recibe como parametro el dispatch, que es una funcion que permite despachar 
+acciones al store de redux.
+*/
+
 import { collection, deleteDoc, doc, setDoc } from 'firebase/firestore/lite';
 import { FirebaseDB } from '../../firebase/config';
 import { fileUpload } from '../../helpers/fileUpload';
@@ -8,6 +15,7 @@ export const startNewNote = () => {
 
     return async(dispatch, getState) => {
         dispatch(savingNewNote());
+        // getState, es una funcion que permite obtener el estado completo actual del store de redux.
         // obtenemos del getState, del reducer Auth, el UID del usuario logeado.
         const { uid } = getState().auth;
         // creamos un elemento a guardar
@@ -18,8 +26,8 @@ export const startNewNote = () => {
         }
         // con los metodos doc y collection
         // creamos un nuevo documento, perteneciente a la collection
-        // params :: FirebaseDB config para conectar a la CLOUD FB
-        // params :: `` url del lugar a donde persistir 
+        // params: FirebaseDB, config para conectar a la CLOUD FB
+        // params: `url`, del lugar a donde persistir 
         const newDoc = doc( collection(FirebaseDB, `${uid}/journal/notes`) );
         // setDoc, setea el docu nuevo en la bd.
         await setDoc(newDoc, newNote);

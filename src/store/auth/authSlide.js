@@ -1,3 +1,16 @@
+// usamos el createSlice de redux-toolkit para crear el slice de auth
+// contiene el estado inicial y las funciones que modifican el estado
+// en este caso las acciones son: checkingCredentials, login y logout
+// las acciones son funciones que reciben el estado y un payload
+/*
+    slice = {
+        name: '',
+        initialState: {}
+        reducers: {}
+    }
+*/
+
+
 import { createSlice } from '@reduxjs/toolkit';
 
 export const authSlice = createSlice({
@@ -11,6 +24,7 @@ export const authSlice = createSlice({
         errorMessage: null,
 
     },
+    // los reducers reciben un state y modifican la propiedad que necesitemos modificar usando el payload
     reducers: {
         login: (state, {payload}) => {
             state.status = 'authenticated';
@@ -38,4 +52,5 @@ export const authSlice = createSlice({
 
 
 // Action creators are generated for each case reducer function
+// Los creadores de acciones se generan para cada función de reducción de casos
 export const { checkingCredentials, login, logout } = authSlice.actions;

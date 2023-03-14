@@ -1,9 +1,17 @@
+/*
+los thunks son funciones de ejecución tardia, acciones asincronas, que estan listos 
+para ser ejecutados cuando se necesiten.
+Cada thunk recibe como parametro el dispatch, que es una funcion que permite despachar 
+acciones al store de redux.
+*/
+
+
 import { loginWithEmailPassword, logoutFirebase, registerUserWithEmailPassword, singInWithGoogle } from "../../firebase/providers";
 import { clearNotesLogout } from "../journal/journalSlice";
 import { checkingCredentials, logout, login } from "./"
 
 export const checkingAuthentication = (email, password) => {
-
+    // dispatch es proporcionada por redux-thunk, que esta dentro de redux-toolkit
     return async (dispatch)=>{
         dispatch(checkingCredentials());
     }

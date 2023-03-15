@@ -1,4 +1,4 @@
-// proveedores de autenticacion.
+// proveedores de autenticacion, metodos de Firebase para autenticacion. 
 import { 
     GoogleAuthProvider, 
     signInWithPopup, 
@@ -6,13 +6,13 @@ import {
     createUserWithEmailAndPassword, 
     signInWithEmailAndPassword, 
 } from 'firebase/auth';
-
+// importamos la configuracion de firebase para la autenticacion.
 import { FirebaseAuth } from "./config";
 
-// declaramos la clase de cada uno de los proveedores que tengamos.
+// declaramos la clase de cada uno de los proveedores que tengamos, en ese caso solo tenemos google.
 const googleProvider = new GoogleAuthProvider();
 
-
+// funcion que nos permite autenticarnos con google
 export const singInWithGoogle = async() => {
 
     try {

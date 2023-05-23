@@ -10,13 +10,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { startGoogleSignIn, startLoginWithEmailPassword } from "../../store/auth";
 import { useMemo } from "react";
 
+
 const formData = {
   email: '',
   password: ''
 };
 export const LoginPage = () => {
   const { status, errorMessage } = useSelector( state => state.auth );
-
   const dispatch = useDispatch();
 
   const {email, password, onInputChange} = useForm(formData);
@@ -35,7 +35,6 @@ export const LoginPage = () => {
 
   return (
     <AuthLayout title="Login">
-
 
       <form className='animate__animated animate__fadeIn animate__faster 'onSubmit={onSubmit}>
         <Grid  container >

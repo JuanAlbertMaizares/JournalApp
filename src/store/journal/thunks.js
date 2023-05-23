@@ -46,13 +46,13 @@ export const startLoadingNotes = () => {
     }
 }
 
-export const startSaveNote = () => {
+export const startSaveNote = () => { 
     
     return async(dispatch, getState) => {
         dispatch(setSaving());
         const {uid} = getState().auth;
         const { active:note } = getState().journal;
-
+        console.log('NOTE A GUARDAR:  ', note)
         const noteToFirestore = { ...note };
         delete noteToFirestore.id;
         // referenciamos y guardamos

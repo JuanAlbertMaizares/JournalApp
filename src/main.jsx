@@ -10,12 +10,9 @@ import { store } from './store';
 
 // carga de la aplicacion
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    {/* se provee el acceso al store y sus reducers */}
     <Provider store={store}>
         <BrowserRouter>
           <JournalApp />
         </BrowserRouter>
     </Provider>
-  </React.StrictMode>
 )

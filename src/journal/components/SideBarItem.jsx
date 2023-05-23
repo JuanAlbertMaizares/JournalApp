@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux"
 import { setActiveNote } from "../../store/journal"
 
 export const SideBarItem = ({ title='', body, id, date, imageUrls=[] }) => {
-    
+    console.log('SideBarItem Id ES: ' + id);
     const dispatch = useDispatch();
     const onClickNote = () => {
         dispatch( setActiveNote({ title, body, id, date, imageUrls }) );

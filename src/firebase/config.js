@@ -18,12 +18,12 @@ import {getFirestore} from 'firebase/firestore/lite';
 // objeto de configuracion del proyecto nuestro
 const firebaseConfig = {
   // apiKey es la clave de la app, Clave de API web.
-  apiKey: "AIzaSyBtBoTVbmdtCNmL8oOv7ykjCWwpdGUwXKw",
-  authDomain: "react-seoul.firebaseapp.com",
-  projectId: "react-seoul",
-  storageBucket: "react-seoul.appspot.com",
-  messagingSenderId: "10396946651",
-  appId: "1:10396946651:web:cfbca67c47747e23283cfe"
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId
 };
 
 // Initialize Firebase
